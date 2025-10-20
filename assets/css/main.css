@@ -805,12 +805,13 @@ section,
 
 .hero h1 {
   margin: 0;
-  font-size: 48px;
+  font-size: 38px;
   font-weight: 700;
   line-height: 56px;
 }
 
 .hero p {
+
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   margin: 5px 0 30px 0;
   font-size: 20px;
@@ -818,23 +819,26 @@ section,
 }
 
 .hero .btn-get-started {
+
   color: var(--contrast-color);
   font-family: var(--heading-font);
   font-weight: 500;
   font-size: 16px;
   letter-spacing: 1px;
   display: inline-block;
-  padding: 10px 36px;
+  padding: 10px 12px;
   border-radius: 4px;
   transition: 0.5s;
   border: 2px solid var(--contrast-color);
 }
 
 .hero .btn-get-started:hover {
-  color: var(--accent-color);
-  background: var(--contrast-color);
+  
+  background-color: #f9f8ff;
 }
-
+.btn-get-started:hover h1 {
+  color: #5846f9;
+}
 .hero .btn-watch-video {
   font-size: 16px;
   transition: 0.5s;
@@ -898,10 +902,17 @@ section,
   font-size: 2rem;
   font-weight: 700;
 }
-
+.about p {
+  direction: rtl;
+margin-bottom: 2rem;
+font-size: 22px;
+}
 .about .content ul {
+  direction: rtl;
   list-style: none;
   padding: 0;
+font-size: 19px;
+
 }
 
 .about .content ul li {
@@ -955,6 +966,9 @@ section,
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
+.services{
+  direction: rtl;
+}
 .services .service-item {
   position: relative;
   padding-top: 20px;
@@ -965,7 +979,7 @@ section,
   width: 72px;
   height: 72px;
   position: relative;
-  margin-right: 15px;
+  margin-left: 15px;
   line-height: 0;
   display: flex;
   align-items: center;
@@ -1009,6 +1023,10 @@ section,
 /*--------------------------------------------------------------
 # Features Section
 --------------------------------------------------------------*/
+.features{
+  direction: rtl;
+}
+
 .features .features-image {
   position: relative;
   min-height: 400px;
@@ -1023,7 +1041,7 @@ section,
 .features .features-item i {
   font-size: 48px;
   color: var(--accent-color);
-  margin-right: 20px;
+  margin-left: 20px;
   line-height: 0;
 }
 
@@ -1172,4 +1190,3 @@ section,
   margin-right: 8px;
   color: var(--accent-color);
 }
-

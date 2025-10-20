@@ -216,3 +216,24 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+
+
+async function downloadWithFallback(url, filename){
+  try {
+    const r = await fetch(url, { mode: 'cors' });
+    if (!r.ok) throw new Error('status ' + r.status);
+    const blob = await r.blob();
+    const u = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = u; a.download = filename || 'file';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(u), 10000);
+  } catch(e){
+    // إذا فشل fetch بسبب CORS أو غيره، افتح الرابط — الخادم قد يجبر التنزيل
+    window.open(url, '_blank', 'noopener');
+  }
+}
+
+// مثال استخدام:
+downloadWithFallback('https://www.svuonline.org/sites/default/files/pr/Guide_S25.pdf', 'Guide_S25.pdf');
